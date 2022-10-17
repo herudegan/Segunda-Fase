@@ -1,0 +1,159 @@
+<html>
+    <head>
+        <title>
+            Smart Fit
+        </title>
+        <link rel = "shortcut icon" type = "imagem/x-icon" href = "../academia/images/favicon.ico"/>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body bgcolor="#545454">
+        <div class="div1">
+            <table>
+                <tr>
+                    <td>
+                        <img src="../academia/images/logo.png" height="90" width="190">
+                    </td>
+                    <td></td>
+                    <img src="../academia/images/cabecario.png" height="90" width="800" align="right">
+                </tr>
+            </table>
+        </div>
+        <div class="div2">
+            <table>
+                <tr>
+                    <td style="width: 270px;"></td>
+                    <td>
+                        <font face="Calibri" size="6">
+                            <a class="link" href="home.html">home</a>
+                        </font>
+                    </td>
+                    <td style="width: 190px;"></td>
+                    <td>
+                        <font face="Calibri" size="6">
+                            <a class="link" href="instrutores.html">instrutores</a>
+                        </font>
+                    </td>
+                    <td style="width: 170px;"></td>
+                    <td>
+                        <font face="Calibri" size="6">
+                                <a class="link" href="modalidades.html">modalidades</a>
+                        </font>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <font face="Calibri">
+            <div class="titulo">
+                matrícula para a nossa academia:
+            </div>
+            <p>
+                <div id="sliderMatri"> <!-- Um protótipo de propagandas, não achei nenhuma boa então escolhi pegar do jogo Roblox -->
+                    <a href="https://www.roblox.com/"><img class="selectedMatri" id="img1" src="../academia/images/propaganda.jpg">
+                    <img id="img2" src="../academia/images/propaganda2.jpg">
+                    <img id="img3" src="../academia/images/propaganda3.jpg"></a>
+                </div>
+            </p>
+            <script src="scriptmatri.js"></script>
+            <form action="#" method="post">
+                <fieldset>
+                    <div class="titulo">
+                        dados pessoais:
+                    </div><br>
+                    <div class="campo">
+                        <label for="nome">nome: </label>
+                        <input type="text" name="nome" id="nome">
+                        <label for="endereço">endereço: </label>
+                        <input type="text" name="endereco" id="endereco"><br><br>
+                        <label for="bairro">bairro: </label>
+                        <input type="text" name="bairro" id="bairro">
+                        <label for="bairro">cidade: </label>
+                        <input type="text" name="cidade" id="cidade"><br><br>
+                        <label for="estado">estado: </label>
+                        <select class="select" name="estado" id="estado">
+                            <option value=""></option>
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espírito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>
+                            <option value="EX">Estrangeiro</option>
+                        </select>
+                        <label for="cep">CEP: </label>
+                        <input type="text" name="cep" id="cep"><br><br>
+                        <label for="bairro">telefone residencial: </label>
+                        <input type="text" name="telefone residencial" id="telefone residencial">
+                        <label for="bairro">telefone celular: </label>
+                        <input type="text" name="telefone celular" id="telefone celular"><br><br>
+                        <label for="sexo">sexo: </label>
+                        <input class="radio" type="radio" name="sexo" id="masculino"> masculino
+                        <input class="radio" type="radio" name="sexo" id="feminino"> feminino <br><br>
+                        <label for="estadocivil">estado civil: </label>
+                        <input class="radio" type="radio" name="estadocivil" id="casado"> casado(a)
+                        <input class="radio" type="radio" name="estadocivil" id="solteiro"> solteiro(a)
+                        <input class="radio" type="radio" name="estadocivil" id="viúvo"> viúvo(a) <br><br>
+                        <label for="data de nascimento">data de nascimento: </label>
+                        <input class="date" type="date" name="data de nascimento" id="data de nascimento">
+                    </div><br>
+                </fieldset>
+                <fieldset>
+                    <div class="titulo">
+                        dados da matrícula: 
+                    </div><br>
+                    <div class="campo">
+                        <label for="dia da semana">dia da semana: </label>
+                        <select class="select" name="dia da semana" id="dia da semana">
+                            <option value=""></option>
+                            <option value="Domingo">Domingo</option>
+                            <option value="Segunda">Segunda</option>
+                            <option value="Terça">Terça</option>
+                            <option value="Quarta">Quarta</option>
+                            <option value="Quinta">Quinta</option>
+                            <option value="Sexta">Sexta</option>
+                            <option value="Sábado">Sábado</option>
+                        </select>
+                        <label for="modalidades">modalidades: </label>
+                        <select class="select" name="modalidades" id="modalidades">
+                            <option value=""></option>
+                            <option value="kendo">Kendo</option>
+                            <option value="parkour">Parkour</option>
+                            <option value="body building">Body building</option>
+                        </select><br><br>
+                        <label for="período">período: </label>
+                        <input class="radio" type="radio" name="período" id="matutino"> matutino
+                        <input class="radio" type="radio" name="período" id="vespertino"> vespertino
+                        <input class="radio" type="radio" name="período" id="noturno"> noturno
+                    </div>
+                    <div align="center"><br>
+                        <button type="submit" class="botaosubmit">Matricular-se!</button>
+                        <button type="reset" class="botaoreset">Limpar</button>
+                    </div>    
+                </fieldset>
+            </form>
+            <center>
+                <p class="creditos" align="center"> © 2022 Lucas De Bitencourt Frasson. All rights reserved </p>
+            </center>
+        </font>
+    </body>
+</html>

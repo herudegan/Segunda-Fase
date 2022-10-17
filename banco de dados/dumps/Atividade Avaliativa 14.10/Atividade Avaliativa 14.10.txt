@@ -1,0 +1,176 @@
+1)
+CREATE VIEW `listar_origem` AS
+select * from origem;
+
+2)
+CREATE VIEW `listar_categorias` AS
+Select codigo, descricao from categoria;
+
+3)
+CREATE VIEW `listar_autores` AS
+Select nome, nacionalidade from autor;
+
+4)
+CREATE VIEW `listar_editoras` AS
+Select codigo, nome, pais from editora;
+
+5)
+CREATE VIEW `listar_alunos` AS
+Select nome, telefone from aluno;
+
+6)
+CREATE VIEW `listar_alunos_cidade` AS
+Select codigo, nome from aluno
+Where cidade = “Criciuma”;
+
+7)
+CREATE VIEW `listar_alunos_estados` AS
+Select nome, cidade, telefone from aluno
+Where estado = “SC”;
+
+8)
+CREATE VIEW `listar_livros_categorias` AS
+Select livro.codigo, livro.titulo, livro.codcategoria 
+from livro, categoria
+Where livro.codcategoria = categoria.codigo
+And categoria.descricao = 'Literatura Estrangeira';
+
+9)
+CREATE VIEW `listar_livros_autores` AS
+Select livro.codigo, livro.titulo , livro.codautor 
+from livro, autor
+Where livro.codautor = autor.codigo
+And autor.nome  like  '%Paulo%';
+
+10)
+CREATE VIEW `listar_livros_editora` AS
+Select livro.codigo, livro.titulo , livro.codeditora 
+from livro, editora
+Where livro.codeditora = editora.codigo
+And editora.nome  like  '%Arqueiro%';
+
+11)
+CREATE VIEW `listar_livros_categoria_editora` AS
+Select livro.codigo, livro.titulo
+from livro, categoria, editora
+Where livro.codcategoria = categoria.codigo
+And livro.codeditora = editora.codigo
+And categoria.descricao  like  '%Literatura Nacional%'
+And editora.nome like '%Arqueiro%';
+
+12)
+CREATE VIEW `listar_livros_categoria_editora_autor` AS
+Select livro.codigo, livro.titulo
+from livro, categoria, editora, autor
+Where livro.codcategoria = categoria.codigo
+And livro.codeditora = editora.codigo
+And livro.codautor = autor.codigo
+And categoria.descricao  like  '%Literatura Nacional%'
+And editora.nome like '%Arqueiro%' 
+And autor.nome    like '%Paulo Coelho%';
+
+13)
+CREATE VIEW `13-Listar_livro_categoria` AS
+select livro.codigo, livro.titulo, livro.paginas, livro.edicao, autor.nome, categoria.descricao
+from livro, autor, categoria
+where livro.codautor = autor.codigo
+and livro.codcategoria = categoria.codigo
+and autor.nome like "%Tolkien%“
+and categoria.descricao like "%Estrangeira%";
+
+14)
+CREATE VIEW `14-Listar_livro_categoria_doacao` AS
+select livro.codigo, livro.titulo, livro.paginas, categoria.descricao, origem.tipo
+from livro, categoria, origem 
+where livro.codorigem = origem.codigo 
+and livro.codcategoria = categoria.codigo 
+and origem.tipo like '%Doação%'
+and categoria.descricao like '%Nacional%';
+
+15)
+CREATE VIEW `15-Listar_livro_autor_origem` AS
+select livro.codigo, livro.titulo, livro.paginas, autor.nome, origem.tipo
+from livro, autor, origem 
+where livro.codorigem = origem.codigo
+and livro.codautor = autor.codigo
+and origem.tipo like '%Doação%'
+and autor.nome like '%Paulo Coelho%';
+
+16)
+CREATE VIEW `16-Listar_livro_autor_categoria_origem` AS
+select livro.codigo, livro.titulo, livro.paginas, autor.nome, origem.tipo, categoria.descricao
+from livro, autor, categoria, origem 
+where livro.codorigem = origem.codigo
+and livro.codautor = autor.codigo
+and livro.codcategoria = categoria.codigo
+and origem.tipo like '%Doação%'
+and categoria.descricao like '%Estrangeira%'
+and autor.nome like '%Tolkien%';
+
+17)
+CREATE VIEW `17-Listar_livro_autor_editora` AS
+select livro.codigo, livro.titulo, livro.paginas, categoria.descricao, autor.nome
+from livro, autor, categoria, editora
+where livro.codeditora = editora.codigo
+and livro.codcategoria = categoria.codigo
+and livro.codautor = autor.codigo
+and categoria.descricao like '%Nacional%'
+and editora.nome like '%Arqueiro%'
+and autor.nome like '%Paulo%';
+
+18)
+CREATE VIEW `18-Listar_livro_autor_categoria` AS
+select livro.codigo, livro.titulo, livro.paginas, autor.nome, origem.tipo, categoria.descricao
+from livro, autor, categoria, editora, origem 
+where livro.codeditora = editora.codigo
+and livro.codorigem = origem.codigo
+and livro.codautor = autor.codigo  and livro.codcategoria = categoria.codigo
+and origem.tipo like '%Compra%'  and editora.nome like '%Harper%'
+and categoria.descricao like '%Estrangeira%'  and autor.nome like '%Tolkien%';
+
+19)
+CREATE VIEW `19-Listar_emprestimo_aluno_livro` AS
+select emprestimo.codigo, emprestimo.dataemprestimo, emprestimo.datadevolucao, emprestimo.codlivro, aluno.nome
+from emprestimo, livro, aluno 
+where emprestimo.codlivro = livro.codigo
+and aluno.nome like '%Cris%';
+
+20)
+CREATE VIEW `20-Listar_emprestimo_livro` AS
+select emprestimo.codigo, emprestimo.codaluno, emprestimo.datadevolucao, livro.titulo
+from emprestimo, livro, aluno
+where emprestimo.codaluno = aluno.codigo
+and livro.titulo like '%Hobbit%';
+
+21)
+CREATE VIEW `21-Listar_emprestimo_aluno_livro` AS
+select emprestimo.codigo, emprestimo.dataemprestimo, emprestimo.datadevolucao, emprestimo.juros, livro.titulo, aluno.nome
+from emprestimo, livro, aluno
+where livro.titulo like '%O Alquimista%' and aluno.nome like '%Luciano%';
+
+22)
+CREATE VIEW `22-Listar_emprestimo_livro_aluno` AS
+select emprestimo.codigo, emprestimo.dataemprestimo, emprestimo.datadevolucao, emprestimo.codlivro, aluno.nome
+from emprestimo, livro, aluno
+where emprestimo.codlivro = livro.codigo
+and aluno.nome like '%Luciano%'
+and dataemprestimo >= '2022/09/01' and dataemprestimo <= '2022/09/30';
+
+23)
+CREATE VIEW `23-Listar_emprestimo_livro_aluno` AS
+select emprestimo.codigo, emprestimo.dataemprestimo, emprestimo.codaluno, livro.titulo , aluno.nome
+from emprestimo, livro, aluno
+where emprestimo.codaluno = aluno.codigo
+and aluno.nome like '%Cris%'
+and livro.titulo like '%Senhor dos Anéis%'
+and dataemprestimo >= '2022/09/01' and dataemprestimo <= '2022/09/10';
+
+24)
+CREATE VIEW `24-Listar_emprestimo_livro_aluno` AS
+select emprestimo.codigo, emprestimo.dataemprestimo, emprestimo.datadevolucao, emprestimo.codaluno , emprestimo.codlivro, emprestimo.juros
+from emprestimo, livro, aluno
+where emprestimo.codaluno = aluno.codigo
+and aluno.nome like '%Cris%'
+and livro.titulo like '%Senhor dos Anéis%'
+and dataemprestimo >= '2022/01/01'
+and emprestimo.juros > 0;

@@ -1,0 +1,19 @@
+/* sus */
+body {
+    background-color: coral;
+}
+
+#div1 {
+    width: 300;
+    height: 30;
+    background-color: aqua;
+    text-align: center;
+    border: 100px;
+    border-style: solid;
+}
+
+#div2 {
+    width: 300;
+    height: 400;
+    background-color: brown;
+}

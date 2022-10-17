@@ -1,0 +1,97 @@
+1)
+select produtos.nome, fornecedores.nome
+from produtos, fornecedores
+Where produtos.codfornecedor = fornecedores.codigo;
+
+2)
+select produtos.nome, categorias.nome 
+from produtos, categorias
+where produtos.codcategoria = categorias.codigo;
+
+3)
+select pedidos.codigo, pedidos.datapedido, produtos.nome, pedidos.total
+from produtos, pedidos
+where pedidos.codproduto = produtos.codigo
+
+4) 
+select pedidos.codigo, pedidos.datapedido, produtos.nome, pedidos.qtde
+from pedidos, produtos
+where pedidos.codproduto = produtos.codigo;
+
+5)
+select produtos.codigo, produtos.nome, categorias.nome, fornecedores.nome
+from produtos, fornecedores, categorias
+where produtos.codcategoria = categorias.codigo
+and produtos.codfornecedor = fornecedores.codigo;
+
+6)
+select produtos.nome, produtos.qtde, produtos.preco, categorias.nome, fornecedores.nome
+from produtos, categorias, fornecedores
+where produtos.codcategoria = categorias.codigo
+and produtos.codfornecedor = fornecedores.codigo;
+
+7)
+select produtos.codigo, produtos.nome, categorias.nome
+from produtos, categorias
+where produtos.codcategoria = categorias.codigo
+and produtos.nome like "%parafuso%";
+
+8) 
+select produtos.nome, produtos.qtde, fornecedores.nome
+from produtos, fornecedores
+where produtos.codfornecedor = fornecedores.codigo
+and produtos.qtde < 100;
+
+9)
+select produtos.codigo, produtos.nome, produtos.preco, categorias.nome, fornecedores.nome
+from produtos, categorias, fornecedores
+where produtos.codfornecedor = fornecedores.codigo
+and produtos.codfornecedor = fornecedores.codigo
+and produtos.preco > 30;
+
+10)
+select produtos.nome, produtos.qtde, produtos.preco, categorias.nome, fornecedores.nome
+from produtos, categorias, fornecedores
+where produtos.codcategoria = categorias.codigo
+and produtos.codfornecedor = fornecedores.codigo
+and produtos.qtde < 10;
+
+11)
+select pedidos.codigo, pedidos.datapedido, produtos.nome, pedidos.total, categorias.nome
+from pedidos, produtos, categorias
+where produtos.codcategoria = categorias.codigo
+and pedidos.codproduto = produtos.codigo
+and pedidos.datapedido like"%08%";
+
+12)
+select pedidos.codigo, pedidos.datapedido, produtos.nome, pedidos.qtde, fornecedores.nome
+from pedidos, produtos, fornecedores
+where pedidos.codproduto = produtos.codigo
+and produtos.codfornecedor = fornecedores.codigo
+and pedidos.datapedido >= "2022/07/15"
+and pedidos.datapedido <= "2022/08/15";
+
+13)
+select pedidos.codigo, pedidos.datapedido, produtos.nome, pedidos.total, categorias.nome, fornecedores.nome
+from pedidos, produtos, categorias, fornecedores
+where produtos.codcategoria = categorias.codigo
+and produtos.codfornecedor = fornecedores.codigo
+and pedidos.codproduto = produtos.codigo
+and pedidos.total > 500;
+
+14)
+select pedidos.codigo, pedidos.datapedido, produtos.nome, pedidos.qtde, categorias.nome, fornecedores.nome
+from pedidos, produtos, categorias, fornecedores
+where produtos.codcategoria = categorias.codigo
+and produtos.codfornecedor = fornecedores.codigo
+and pedidos.codproduto = produtos.codigo
+and pedidos.qtde < 50;
+
+15)
+select pedidos.codigo, pedidos.datapedido, produtos.nome, pedidos.total, pedidos.qtde, categorias.nome, fornecedores.nome
+from pedidos, produtos, categorias, fornecedores
+where produtos.codcategoria = categorias.codigo
+and produtos.codfornecedor = fornecedores.codigo
+and pedidos.codproduto = produtos.codigo
+and pedidos.total <= 200
+and pedidos.qtde < 10;

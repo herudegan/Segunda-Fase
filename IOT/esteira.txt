@@ -1,0 +1,8 @@
+separador/contador de peças:
+
+led para mostrar que o motor está ligado.
+servomotor1 indo de 0° para 90° simbolizando uma caixa
+sensor ultrassonico, dist < 45 && dist > 30 = P, dist < 30 && dist > 15 = G
+servomotor2 peça P 120°, peca G 60°
+2 botões, 1 para P e 1 para G, contador e o servomotor1 manda mais uma caixa
+1 botão de emergência, parar tudo e aparecer no monitor serial "Estado de emergência"
