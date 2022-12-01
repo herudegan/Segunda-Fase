@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <meta http-equiv="refresh" content="2">
+        <style type="text/css">
+            body{
+                background-color: black;}
+            div{
+                color: white;}
+        </style>
+        <title>
+            teste
+        </title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var amogos = 0;
+            var test = []
+            var button1 = document.getElementById("teste")
+            function start() {
+                const date = new Date();
+                const currentSecond = date.getSeconds();
+                const currentMinute = date.getMinutes();
+                const currentHour = date.getHours();
+                const currentDay = date.getDate();
+                const currentMonth = date.getMonth() + 1;
+                const currentYear  = date.getFullYear();
+                var teste = 'Aluno: Random; Horario: '+currentHour+"hr /"+currentMinute+"min /"+currentSecond+"s  "+" Dia: "+currentDay+"/"+currentMonth+"/"+currentYear
+                test.push(teste)
+                document.getElementById('teste1').innerText = test.join('\n')
+                amogos = amogos + 1}
+            setTimeout(start, 1000);
+        </script>
+        <div id="teste1"></div>
+    </body>
+</html>

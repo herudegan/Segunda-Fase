@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        body{
+            margin: 20px;
+        }
+        .titulo{
+            text-align: center;
+            color: white;
+            font-size: 50px;
+        }
+        #numerosJa{
+            font-size: 50px;
+            color: white;
+        }
+    </style>
+	<meta charset="utf-8">
+	<title>Bingo</title>
+</head>
+<body bgcolor="#000000">
+    <script type="text/javascript">
+        var numeros = [];
+        var teste = document.getElementById("teste")
+        cont = 0
+            function sorteio() {
+                var aleatorio = Math.floor(Math.random() * 24);
+                if (numeros.indexOf(aleatorio) == -1){
+                    numeros.push(aleatorio);
+                    document.i
+                    alert(aleatorio)
+                    numeros.sort()
+                    document.getElementById("numerosJa").innerText = numeros.join("\n")
+                }
+                else if (numeros.length >= 24){
+                    alert("Você tirou todas as possibilidades.")
+                }
+                else {
+                    sorteio()
+                }
+            }
+        teste.addEventListener("click", function(sorteio){
+        })
+    </script>
+    <div class="titulo">
+        Seja bem vindo ao nosso bingo!<br><br>
+        Ao clicar no botão abaixo irá aparecer um alerta mostrando o número sorteado, simulando uma roleta de bingo convencional.<br><br>
+        <button type="button" style="width: 200px; height: 100px" onclick="sorteio()" id="teste"><font size=6>Clique Aqui!</font></button>
+        <p>
+            <font size=9 color="#FFFFFF">(Usar celular na horizontal para melhor visão)<br>Números já sorteados: </font>
+        </p>
+        <div id="numerosJa">
+        </div>
+    </div>
+</body>
+</html>
